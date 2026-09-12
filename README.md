@@ -28,3 +28,15 @@ Uses the [HAI Security Dataset](https://github.com/icsdataset/hai) — auto-down
 
 ## Tech stack
 Python, PyTorch, scikit-learn, SHAP, pandas
+
+## How to run the notebook
+1. Open `notebooks/model_training_and_ensemble.ipynb` in Google Colab or Jupyter
+2. Install dependencies: pip install pandas numpy torch scikit-learn shap joblib kagglehub
+3. Run all cells — the HAI dataset downloads automatically via `kagglehub`
+4. Trained models and metrics will be saved to a `hai_models/` output folder
+
+## Using the pre-trained models
+The trained weights are already available in `models/` if you don't want to retrain:
+- `iso_forest.pkl`, `scalers.pkl` — load with `joblib.load()`
+- `lstm_ae_full.pt`, `transformer_ae_full.pt` — load with `torch.load()`
+- `feature_cols.json`, `metadata.json` — feature list and training config
